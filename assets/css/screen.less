@@ -149,10 +149,10 @@ ul ol, ol ul {
 
 ol li ol {
 	list-style-type: upper-alpha;
-	
+
 	li ol {
 		list-style-type: decimal;
-		
+
 		li ol {
 			list-style-type: upper-alpha;
 		}
@@ -197,7 +197,7 @@ blockquote {
 
 blockquote p {
     margin: 0.8em 0;
-    
+
     &:last-child {
     	margin-bottom: 0;
     }
@@ -326,6 +326,702 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
+/* ========================================================================
+   Component: Nav
+ ========================================================================== */
+.uk-nav,
+.uk-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/*
+ * Items
+ */
+.uk-nav li > a {
+  display: block;
+  text-decoration: none;
+}
+.uk-nav > li > a {
+  padding: 5px 15px;
+}
+/*
+ * Nested items
+ */
+.uk-nav ul {
+  padding-left: 15px;
+}
+.uk-nav ul a {
+  padding: 2px 0;
+}
+/*
+ * Item subtitle
+ */
+.uk-nav li > a > div {
+  font-size: 12px;
+  line-height: 18px;
+}
+/* Sub-object: `uk-nav-header`
+ ========================================================================== */
+.uk-nav-header {
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+}
+.uk-nav-header:not(:first-child) {
+  margin-top: 15px;
+}
+/* Sub-object: `uk-nav-divider`
+ ========================================================================== */
+.uk-nav-divider {
+  margin: 9px 15px;
+}
+/* Sub-object: `uk-nav-sub`
+ ========================================================================== */
+/*
+ * `ul` needed for higher specificity to override padding
+ */
+ul.uk-nav-sub {
+  padding: 5px 0 5px 15px;
+}
+/* Modifier: `uk-nav-parent-icon`
+ ========================================================================== */
+.uk-nav-parent-icon > .uk-parent > a:after {
+  content: "\f104";
+  width: 20px;
+  margin-right: -10px;
+  float: right;
+  font-family: FontAwesome;
+  text-align: center;
+}
+.uk-nav-parent-icon > .uk-parent.uk-open > a:after {
+  content: "\f107";
+}
+/* Modifier `uk-nav-side`
+ ========================================================================== */
+/*
+ * Items
+ */
+.uk-nav-side > li > a {
+  color: #444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-nav-side > li > a:hover,
+.uk-nav-side > li > a:focus {
+  background: rgba(0, 0, 0, 0.03);
+  color: #444;
+  /* 2 */
+  outline: none;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 -1px 0 #fff;
+}
+/* Active */
+.uk-nav-side > li.uk-active > a {
+  background: #57a8cb;
+  color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+/*
+ * Sub-object: `uk-nav-header`
+ */
+.uk-nav-side .uk-nav-header {
+  color: #444;
+}
+/*
+ * Sub-object: `uk-nav-divider`
+ */
+.uk-nav-side .uk-nav-divider {
+  border-top: 1px solid #ddd;
+  box-shadow: 0 1px 0 #fff;
+}
+/*
+ * Nested items
+ */
+.uk-nav-side ul a {
+  color: #777777;
+}
+.uk-nav-side ul a:hover {
+  color: #53a2c3;
+}
+/* Modifier `uk-nav-dropdown`
+ ========================================================================== */
+/*
+ * Items
+ */
+.uk-nav-dropdown > li > a {
+  color: #444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-nav-dropdown > li > a:hover,
+.uk-nav-dropdown > li > a:focus {
+  background: #57a8cb;
+  color: #fff;
+  /* 2 */
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+/*
+ * Sub-object: `uk-nav-header`
+ */
+.uk-nav-dropdown .uk-nav-header {
+  color: #999;
+}
+/*
+ * Sub-object: `uk-nav-divider`
+ */
+.uk-nav-dropdown .uk-nav-divider {
+  border-top: 1px solid #ddd;
+}
+/*
+ * Nested items
+ */
+.uk-nav-dropdown ul a {
+  color: #777777;
+}
+.uk-nav-dropdown ul a:hover {
+  color: #53a2c3;
+}
+/* Modifier `uk-nav-navbar`
+ ========================================================================== */
+/*
+ * Items
+ */
+.uk-nav-navbar > li > a {
+  color: #444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-nav-navbar > li > a:hover,
+.uk-nav-navbar > li > a:focus {
+  background: #57a8cb;
+  color: #fff;
+  /* 2 */
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+/*
+ * Sub-object: `uk-nav-header`
+ */
+.uk-nav-navbar .uk-nav-header {
+  color: #3d4549;
+}
+/*
+ * Sub-object: `uk-nav-divider`
+ */
+.uk-nav-navbar .uk-nav-divider {
+  border-top: 1px solid #ddd;
+}
+/*
+ * Nested items
+ */
+.uk-nav-navbar ul a {
+  color: #777777;
+}
+.uk-nav-navbar ul a:hover {
+  color: #53a2c3;
+}
+/* Modifier `uk-nav-offcanvas`
+ ========================================================================== */
+/*
+ * Items
+ */
+.uk-nav-offcanvas > li > a {
+  color: #ccc;
+  padding: 10px 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+/*
+ * Hover
+ * No hover on touch devices because it behaves buggy in fixed offcanvas
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-nav-offcanvas > .uk-open > a,
+html:not(.uk-touch) .uk-nav-offcanvas > li > a:hover,
+html:not(.uk-touch) .uk-nav-offcanvas > li > a:focus {
+  background: #404040;
+  color: #fff;
+  /* 2 */
+  outline: none;
+}
+/*
+ * Active
+ * `html .uk-nav` needed for higher specificity to override hover
+ */
+html .uk-nav.uk-nav-offcanvas > li.uk-active > a {
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/*
+ * Sub-object: `uk-nav-header`
+ */
+.uk-nav-offcanvas .uk-nav-header {
+  color: #777;
+  margin-top: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  background: #404040;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+/*
+ * Sub-object: `uk-nav-divider`
+ */
+.uk-nav-offcanvas .uk-nav-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.01);
+  margin: 0;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/*
+ * Nested items
+ * No hover on touch devices because it behaves buggy in fixed offcanvas
+ */
+.uk-nav-offcanvas ul a {
+  color: #ccc;
+}
+html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
+  color: #fff;
+}
+/*
+     * Modifier `uk-nav-offcanvas`
+     */
+.uk-nav-offcanvas {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+/*
+     * Sub-object: `uk-nav-sub`
+     */
+.uk-nav-offcanvas .uk-nav-sub {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+/* ========================================================================
+   Component: Navbar
+ ========================================================================== */
+.uk-navbar {
+  background: #FFF;
+  color: #3d4549;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-origin: border-box;
+  position: relative;
+}
+/*
+ * Micro clearfix
+ */
+.uk-navbar:before,
+.uk-navbar:after {
+  content: "";
+  display: table;
+}
+.uk-navbar:after {
+  clear: both;
+}
+/* Sub-object: `uk-navbar-nav`
+ ========================================================================== */
+.uk-navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: right;
+}
+/*
+ * 1. Create position context for dropdowns
+ */
+.uk-navbar-nav > li {
+  float: left;
+  /* 1 */
+  position: relative;
+}
+/*
+ * 1. Dimensions
+ * 2. Style
+ */
+.uk-navbar-nav > li > a {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  /* 1 */
+  height: 41px;
+  padding: 0 15px;
+  line-height: 40px;
+  /* 2 */
+  color: #6f7c82;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -1px;
+  margin-left: -1px;
+  border: 1px solid transparent;
+  border-bottom-width: 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 0 #fff;
+}
+/* Appear not as link */
+.uk-navbar-nav > li > a[href='#'] {
+  cursor: text;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Also apply if dropdown is opened
+ * 3. Remove default focus style
+ */
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a:focus,
+.uk-navbar-nav > li.uk-open > a {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #444;
+  /* 3 */
+  outline: none;
+  position: relative;
+  z-index: 1;
+  border-left-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+/* OnClick */
+.uk-navbar-nav > li > a:active {
+  background-color: #f5f5f5;
+  color: #444;
+  border-left-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.2);
+}
+/* Active */
+.uk-navbar-nav > li.uk-active > a {
+  background-color: #f2f2f2;
+  color: #3d4549;
+  border-left-color: rgba(0, 0, 0, 0.1);
+  border-right-color: rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(0, 0, 0, 0.2);
+}
+/* Sub-objects: `uk-navbar-nav-subtitle`
+ ========================================================================== */
+.uk-navbar-nav .uk-navbar-nav-subtitle {
+  line-height: 28px;
+}
+.uk-navbar-nav-subtitle > div {
+  margin-top: -6px;
+  font-size: 10px;
+  line-height: 12px;
+}
+/* Sub-objects: `uk-navbar-content`, `uk-navbar-brand`, `uk-navbar-toggle`
+ ========================================================================== */
+/*
+ * Imitate navbar items
+ */
+.uk-navbar-content,
+.uk-navbar-brand,
+.uk-navbar-toggle {
+  box-sizing: border-box;
+  display: block;
+  height: 41px;
+  padding: 0 15px;
+  float: left;
+  margin-top: -1px;
+  text-shadow: 0 1px 0 #fff;
+}
+/*
+ * Helper to center all child elements vertically
+ */
+.uk-navbar-content:before,
+.uk-navbar-brand:before,
+.uk-navbar-toggle:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/* Sub-objects: `uk-navbar-content`
+ ========================================================================== */
+/*
+ * Better sibling spacing
+ */
+.uk-navbar-content + .uk-navbar-content:not(.uk-navbar-center) {
+  padding-left: 0;
+}
+/*
+ * Link colors
+ */
+.uk-navbar-content > a:not([class]) {
+  color: #777777;
+}
+.uk-navbar-content > a:not([class]):hover {
+  color: #53a2c3;
+}
+/* Sub-objects: `uk-navbar-brand`
+ ========================================================================== */
+.uk-navbar-brand {
+  font-size: 1.1em;
+  color: #3d4549;
+  text-decoration: none;
+}
+/*
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-navbar-brand:hover,
+.uk-navbar-brand:focus {
+  color: #444;
+  text-decoration: none;
+  /* 2 */
+  outline: none;
+}
+/* Sub-object: `uk-navbar-toggle`
+ ========================================================================== */
+.uk-navbar-toggle {
+  font-size: 18px;
+  color: #3d4549;
+  text-decoration: none;
+}
+/*
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-navbar-toggle:hover,
+.uk-navbar-toggle:focus {
+  color: #444;
+  text-decoration: none;
+  /* 2 */
+  outline: none;
+}
+/*
+ * 1. Center icon vertically
+ */
+.uk-navbar-toggle:after {
+  content: "\f0c9";
+  font-family: FontAwesome;
+  /* 1 */
+  vertical-align: middle;
+}
+.uk-navbar-toggle-alt:after {
+  content: "\f002";
+}
+/* Sub-object: `uk-navbar-center`
+ ========================================================================== */
+/*
+ * The element with this class needs to be last child in the navbar
+ * 1. This hack is needed because other float elements shift centered text
+ */
+.uk-navbar-center {
+  float: none;
+  text-align: center;
+  /* 1 */
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Sub-object: `uk-navbar-flip`
+ ========================================================================== */
+.uk-navbar-flip {
+	float: right;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+/*
+     * Apply same `border-radius` as `uk-navbar`
+     */
+.uk-navbar-nav:first-child > li:first-child > a {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/*
+     * Sub-modifier `uk-navbar-flip`
+     */
+/* Collapse border */
+.uk-navbar-flip .uk-navbar-nav > li > a {
+  margin-left: 0;
+  margin-right: -1px;
+}
+/* Apply same `border-radius` as `uk-navbar` */
+.uk-navbar-flip .uk-navbar-nav:first-child > li:first-child > a {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.uk-navbar-flip .uk-navbar-nav:last-child > li:last-child > a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/*
+     * Sub-modifier `uk-navbar-attached`
+     */
+.uk-navbar-attached {
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-radius: 0;
+  z-index: 10;
+}
+.uk-navbar-attached .uk-navbar-nav > li > a {
+  border-radius: 0 !important;
+}
+.uk-navbar-attached img.uk-navbar-brand {
+  padding: 8px;
+}
+
+.uk-animation-hover{
+	border: solid 1px #000;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	cursor: pointer;
+	display: none;
+	padding: 0px 8px;
+	position: absolute;
+	top: 4px;
+	right: 10px;
+	i{
+		color: #000;
+		font-size: 20px;
+	}
+}
+
+/* ========================================================================
+   Component: Subnav
+ ========================================================================== */
+/*
+ * 1. Gutter
+ * 2. Remove default list style
+ */
+.uk-subnav {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  /* 1 */
+  margin-left: -10px;
+  margin-top: -10px;
+  /* 2 */
+  padding: 0;
+  list-style: none;
+}
+/*
+ * 1. Space is allocated solely based on content dimensions
+ * 2. Horizontal gutter is using `padding` so `uk-width-*` classes can be applied
+ * 3. Create position context for dropdowns
+ */
+.uk-subnav > * {
+  /* 1 */
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+  /* 2 */
+  padding-left: 10px;
+  margin-top: 10px;
+  /* 3 */
+  position: relative;
+}
+/*
+ * DEPRECATED IE9 Support
+ */
+.uk-subnav:before,
+.uk-subnav:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+}
+.uk-subnav:after {
+  clear: both;
+}
+.uk-subnav > * {
+  float: left;
+}
+/* Items
+ ========================================================================== */
+.uk-subnav > * > * {
+  display: inline-block;
+  color: #444;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ */
+.uk-subnav > * > :hover,
+.uk-subnav > * > :focus {
+  color: #777777;
+  text-decoration: none;
+}
+/*
+ * Active
+ */
+.uk-subnav > .uk-active > * {
+  color: #777777;
+}
+/* Modifier: 'subnav-line'
+ ========================================================================== */
+.uk-subnav-line > :before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  vertical-align: middle;
+}
+.uk-subnav-line > :nth-child(n+2):before {
+  margin-right: 10px;
+  border-left: 1px solid #ddd;
+}
+/* Modifier: 'subnav-pill'
+ ========================================================================== */
+.uk-subnav-pill > * > * {
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+.uk-subnav-pill > * > :hover,
+.uk-subnav-pill > * > :focus {
+  background: #fafafa;
+  color: #444;
+  text-decoration: none;
+  /* 2 */
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+/*
+ * Active
+ * `li` needed for higher specificity to override hover
+ */
+.uk-subnav-pill > .uk-active > * {
+  background: #57a8cb;
+  color: #fff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Disabled state
+ ========================================================================== */
+.uk-subnav > .uk-disabled > * {
+  background: none;
+  color: #999;
+  text-decoration: none;
+  cursor: text;
+  box-shadow: none;
+}
 
 /* ==========================================================================
    Utilities - These things get used a lot
@@ -370,7 +1066,7 @@ main {
 	.pane {
 			padding-top: 40px;
 	}
-	
+
 	h2 {
 		padding-bottom: 20px;
 		text-align: center;
@@ -401,18 +1097,18 @@ article {
 .post-preview {
 	margin: 0 auto 100px;
 	//max-width: 700px;
-		
+
 	.post-image {
 		height: 400px;
 		background-position: center;
 		background-size: cover;
-			
+
 		&.no-cover {
 			display: none;
-	
+
 		}
 	}
-	
+
 	.author-thumb {
 	    width: 24px;
 	    height: 24px;
@@ -420,36 +1116,36 @@ article {
 	    margin-right: 9px;
 	    border-radius: 100%;
 	}
-	
+
 	&:last-child {
 		margin-bottom: 0;
 	}
-	
+
 	.post-header {
 		padding: 20px 0 0 0;
-	
+
 		h2,
 		h3 {
 			margin-bottom: 10px;
 			font-size: 3rem;
 			color: #3A4145;
 			transition: all 0.2s ease, top 0.3s ease;
-			
+
 			&:hover {
 				color: #57A3E8;
 				transition: all 0.2s ease, top 0.3s ease;
 			}
 		}
-		
+
 		.post-meta {
 			color: #909A9E;
 			font-size: 1.5rem;
 		}
 	}
-	
+
 	.post-excerpt {
 		padding: 20px 0 0 0;
-		
+
 		p {
 			margin: 0;
 			padding: 0;
@@ -464,111 +1160,111 @@ article {
 /* ==========================================================================
    Single Post - When you click on an individual post
    ========================================================================== */
-   
+
 .single-post,
 .page,
 .author-page {
-   
+
 	.post-image {
 		height: 600px;
 		overflow: hidden;
 		background-position: center;
 		background-size: cover;
-		
+
 		&.no-cover {
 			display: none;
-	
+
 		}
 	}
-	
+
 	&.author-page .post-header {
 		margin-bottom: 0;
-		
+
 			h2 {
 				margin-bottom: 10px;
 			}
 	}
-	   
+
 	.post-header {
 		margin-bottom: 50px;
-	
+
 		h2 {
 			margin-bottom: 10px;
 		}
-		
+
 		.post-meta {
 			color: #909A9E;
 			font-size: 1.5rem;
 		}
 	}
-	
+
 	.post-body,
 	.author-body {
 		position: relative;
 	}
-	
+
 	.post-content,
 	.author-posts {
 		max-width: 700px;
-		
+
 		p:first-of-type {
 			margin-top: 0;
 		}
-		
+
 		img {
 			width: 100%;
 		}
 	}
-	
+
 	.post-footer {
 		max-width: 700px;
 		font-size: 1.75rem;
 		margin: 50px 0 0;
 		color: #A1B2BB;
-	
+
 		.meta {
 			float: left;
-			
+
 			.author {
 				margin-right: 20px;
 				font-weight: 700;
 			}
 		}
-		
+
 		.share {
 			float: right;
-			
+
 			a {
 				margin: 0 2px;
 				color: darken(#A1B2BB,10%);
-				
+
 				&:hover {
 					color: darken(#A1B2BB,30%);
 				}
-				
+
 				&:first-of-type {
 					margin-left: 10px;
 				}
-				
+
 				&:last-of-type {
 					margin-right: 0;
 				}
 			}
 		}
-		
+
 		hr {
 			display: none;
 			margin-top: 20px;
 			margin-bottom: 0;
 		}
 	}
-	
+
 	.post-author {
 		width: 300px;
 		position: absolute;
 		top: 0;
 		right: 0;
-		
+
 		h3 {
 			font-size: 3rem;
 			display: block;
@@ -576,56 +1272,56 @@ article {
 			margin: 0;
 			font-weight: 300;
 		}
-		
+
 		.author {
 			position: relative;
-		
+
 			.portrait {
 				width: 100%;
 				line-height: 0;
-				
+
 				img {
 					width: 100%;
 				}
 			}
-			
+
 			.bio {
 				padding: 35px 40px;
 				background: #000000;
 				color: #ffffff;
-				
+
 				h4 {
 					font-size: 2.5rem;
 					line-height: 3rem;
 					margin-bottom: 20px;
 					font-weight: 600;
-					
+
 					a {
 						color: #ffffff;
-						
+
 						&:hover {
 						    color: #3986AA;
 						}
 					}
 				}
-				
+
 				p {
 					font-size: 1.5rem;
 					line-height: 2.5rem;
 					color: #979DA0;
 					margin-bottom: 10px;
-					
+
 					&:first-of-type {
 						margin-top: 0;
 					}
 				}
-				
+
 				.location {
 					display: block;
 					font-size: 1.5rem;
 					line-height: 2.5rem;
 				}
-				
+
 				.website {
 					display: block;
 					font-size: 1.5rem;
@@ -634,10 +1330,10 @@ article {
 			}
 		}
 	}
-	
+
 	.post-comments {
 		max-width: 700px;
-		
+
 		hr {
 			margin-top: 20px;
 			margin-bottom: 50px;
@@ -653,14 +1349,14 @@ article {
 /* ==========================================================================
    Tag archive
    ========================================================================== */
-   
+
 .tag {
 	padding-bottom: 0;
 	text-align: center;
 	font-size: 4rem;
 }
-   
-   
+
+
 /* ==========================================================================
    Third Party Elements - Embeds from other services
    ========================================================================== */
@@ -745,28 +1441,28 @@ article {
 	color: #ffffff;
 	text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 	text-align: center;
-	
+
 	.verticle {
 		display: table-cell;
 		vertical-align: middle;
 	}
-	
+
 	.blog-logo {
 		max-height: 100px;
 		display: block;
 		margin: 0 0 20px 0;
-		
+
 		img {
 			max-height: 100px;
 		}
 	}
-	
+
 	h1 {
 		font-size: 4rem;
 		font-weight: 600;
 		margin: 0;
 	}
-	
+
 	h2 {
 		font-size: 2.5rem;
 		font-weight: 300;
@@ -788,24 +1484,24 @@ article {
 	color: #ffffff;
 	text-align: center;
 	transition: all 0.2s ease, top 0.3s ease;
-	
+
 	.verticle {
 		display: table-cell;
 		vertical-align: middle;
 	}
-	
+
 	.blog-title-link {
 		max-height: 120px;
 		display: inline-block;
 		vertical-align: top;
 		color: #ffffff;
 		padding: 20px;
-		
+
 		img {
 			max-height: 80px;
 			margin: 0 20px 0 0;
 		}
-		
+
 		h1 {
 			display: inline-block;
 			font-size: 4rem;
@@ -863,7 +1559,7 @@ article {
    ========================================================================== */
 
 @media only screen and (max-width: 1200px) {
-	
+
     h1 {
         font-size: 4rem;
     }
@@ -884,51 +1580,51 @@ article {
 		font-size: 1.5rem;
 		line-height: 2.2rem;
 	}
-	
+
 	.site-page-head {
 		height: 150px;
-		
+
 		.blog-title-link {
-			
+
 			h1 {
 				font-size: 3rem;
 			}
 		}
 	}
-	
+
 	/* Main Page */
-	
+
 	.post-preview {
-		
+
 	    .post-image {
 	    	height: 300px;
 	    }
 	}
-	
+
 	/* Post Page */
-	
+
 	.single-post,
 	.page,
 	.author-page {
 		.post-image {
 			height: 450px;
 		}
-		
+
 		.post-header h2 {
 			font-size: 4rem;
 		}
-		
+
 		.post-body,
 		.author-body {
 			padding-right: 350px;
 		}
-		
+
 		.post-author h4 {
 			font-size: 2.5rem;
 			height: 40px;
 		}
 	}
-	
+
 	.page .post-body,
 	.page .author-body {
 		padding-right: 0;
@@ -941,39 +1637,39 @@ article {
 	.strip {
 		max-width: 700px;
 	}
-	
+
 	/* Post Page */
-	
+
 	.single-post,
 	.page,
 	.author-page {
-	
+
 		.post-image {
 			height: 400px;
 		}
-		
+
 		.post-body,
 		.author-body {
 			padding-right: 0;
 		}
-		
+
 		.post-footer {
 			.author {
 				display: none;
 			}
-			
+
 			hr {
 				display: block;
 			}
 		}
-		
+
 		.post-author {
 			width: 100%;
 			position: relative;
 			margin: 50px 0;
-			
+
 			.author {
-			
+
 				.portrait {
 					width: 300px;
 					height: 300px;
@@ -981,15 +1677,15 @@ article {
 					top: 0;
 					left: 0;
 				}
-				
+
 				.bio {
 					height: 220px;
 					padding: 40px 40px 40px 340px;
-					
+
 					h4 {
 						margin-bottom: 15px;
 					}
-					
+
 					p {
 						margin-top: 15px;
 						margin-bottom: 10px;
@@ -997,12 +1693,12 @@ article {
 				}
 			}
 		}
-		
+
 		.post-comments hr {
 			display: none;
 		}
 	}
-	
+
 	.author-page .post-author {
 		margin-top: 0;
 	}
@@ -1033,81 +1729,81 @@ article {
     h4 {
         font-size: 2.3rem;
     }
-    
+
     .site-head {
     	height: auto;
     	max-height: auto;
     	padding: 50px 0;
-    	
+
     	h1 {
     		font-size: 3rem;
     	}
-    	
+
     	h2 {
     		font-size: 2.0rem;
     	}
     }
-    
+
     .site-page-head {
     	height: 100px;
-    	
+
     	.blog-title-link {
-    	
+
     		img {
     			margin: 0;
     		}
-    		
+
     		h1 {
     			display: none;
     		}
     	}
     }
-    
+
     .site-footer {
     	padding: 60px 0;
     }
-    
+
     /* Main Page */
-    
+
     .post-preview {
     	margin: 0 auto 60px;
     	padding: 0 40px;
-    	
+
 	    .post-image {
 	    	height: 300px;
 	    }
-    	
+
     	.post-header {
-    		    	
+
     		h2 {
     			margin-bottom: 8px;
     			font-size: 2.8rem;
     		}
     	}
-    	
+
     	.post-excerpt {
     		padding: 10px 0 0 0;
     	}
     }
-    
+
     /* Post Page */
-    
+
     .single-post,
     .page,
     .author-page {
-    	
+
     	.post-image {
     		height: 250px;
-    		
+
     		&.no-cover {
     			display: none;
     		}
     	}
-    
+
     	.post-header h2 {
     		font-size: 2.8rem;
     	}
-    
+
 	    .post-header,
 	    .post-content,
 	    .post-footer,
@@ -1115,19 +1811,19 @@ article {
 	    .author-posts {
 	    	padding: 0 50px;
 	    }
-	    
+
 	    .post-author {
-	    	
+
 	    	h3 {
 	    		padding: 0 50px;
 	    	}
-	    	
+
 	    	.author {
-	    	
+
 	    		.portrait {
 	    			display: none;
 	    		}
-	    		
+
 	    		.bio {
 	    			height: auto;
 	    			padding: 40px 50px;
@@ -1137,100 +1833,121 @@ article {
 	}
 }
 
-
+@media only screen and (max-width: 767px) {
+	.uk-animation-hover{
+		display: block;
+	}
+	.uk-hidden-small{
+		display: block;
+	}
+	.uk-navbar-nav{
+		background: #FFF;
+		display: none;
+		padding-bottom: 2px;
+		position: relative;
+		top: 42px;
+		width: 100%;
+		z-index: 10;
+	}
+	.uk-navbar-nav > li{
+		border-bottom: solid 1px #000;
+		text-align: center;
+		width: 100%;
+	}
+}
 @media only screen and (max-width: 500px) {
 
 	.pane {
 		padding: 20px 0;
 	}
-	
+
 	hr {
 		margin: 30px 0;
 	}
-	
+
 	.site-head {
 		padding: 40px 0;
-		
+
 		h1 {
 			font-size: 3rem;
 		}
-		
+
 		h2 {
 			font-size: 2.0rem;
 		}
 	}
-	
+
 	.site-footer {
 		padding: 40px 0;
 	}
-	
+
 	/* Main Page */
-	
+
 	.post-preview {
 		margin: 0 auto 40px;
 		padding: 0 20px;
-		
+
 		&:last-child {
 			margin-bottom: 20px;
 		}
-		
+
 	    .post-image {
 	    	height: 200px;
 	    }
-		
+
 		.post-header {
-			    	
+
 			h2 {
 				margin-bottom: 5px;
 				font-size: 2.2rem;
 				line-height: 2.8rem;
 			}
 		}
-		
+
 		.post-excerpt {
 			padding: 10px 0 0 0;
 		}
 	}
-	
+
 	/* Post Page */
-	
+
 	.single-post,
 	.page,
 	.author-page {
 		.post-image {
 			height: 200px;
-			
+
 			&.no-cover {
 				display: none;
 			}
 		}
-		
+
 		.post-header,
 		.post-content,
 		.post-footer,
 		.author-posts {
 			margin-bottom: 40px;
 		}
-		
+
 		.post-header,
 		.post-content,
 		.post-footer,
 		.post-comments {
 			padding: 0 20px;
 		}
-		
+
 		.post-author {
-			
+
 			h3 {
 				padding: 0 20px;
 			}
-			
+
 			.author {
-			
+
 				.portrait {
 					display: none;
 				}
-				
+
 				.bio {
 					height: auto;
 					padding: 30px 20px;

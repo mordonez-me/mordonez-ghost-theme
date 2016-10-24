@@ -8,6 +8,10 @@
 
     $(document).ready(function(){
 
+      $(".uk-animation-hover").on("click", function(){
+        $(".uk-navbar-nav").slideToggle();
+      });
+
         $(".post-content").fitVids();
 
         function casperFullImg() {
@@ -53,7 +57,7 @@
           timeout = setTimeout(delayed, threshold || 100);
       };
   }
-  // smartresize 
+  // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');

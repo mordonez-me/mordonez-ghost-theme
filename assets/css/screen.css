@@ -245,7 +245,7 @@ kbd {
   font-weight: bold;
   background: #f4f4f4;
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #ffffff inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 table {
   -moz-box-sizing: border-box;
@@ -298,7 +298,6 @@ margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
   margin: 0;
 }
-
 /* ========================================================================
    Component: Nav
  ========================================================================== */
@@ -598,6 +597,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   border-bottom-color: rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   background-origin: border-box;
+  position: relative;
 }
 /*
  * Micro clearfix
@@ -616,7 +616,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   margin: 0;
   padding: 0;
   list-style: none;
-  float: left;
+  float: right;
 }
 /*
  * 1. Create position context for dropdowns
@@ -808,6 +808,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  ========================================================================== */
 .uk-navbar-flip {
   float: right;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 /*
      * Apply same `border-radius` as `uk-navbar`
@@ -848,6 +852,22 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 .uk-navbar-attached img.uk-navbar-brand {
   padding: 8px;
+}
+.uk-animation-hover {
+  border: solid 1px #000;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  padding: 0px 8px;
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
+.uk-animation-hover i {
+  color: #000;
+  font-size: 20px;
 }
 /* ========================================================================
    Component: Subnav
@@ -972,7 +992,6 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   cursor: text;
   box-shadow: none;
 }
-
 /* ==========================================================================
    Utilities - These things get used a lot
    ========================================================================== */
@@ -1714,6 +1733,28 @@ article {
     padding: 40px 50px;
   }
 }
+@media only screen and (max-width: 767px) {
+  .uk-animation-hover {
+    display: block;
+  }
+  .uk-hidden-small {
+    display: block;
+  }
+  .uk-navbar-nav {
+    background: #FFF;
+    display: none;
+    padding-bottom: 2px;
+    position: relative;
+    top: 42px;
+    width: 100%;
+    z-index: 10;
+  }
+  .uk-navbar-nav > li {
+    border-bottom: solid 1px #000;
+    text-align: center;
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 500px) {
   .pane {
     padding: 20px 0;
@@ -1807,72 +1848,6 @@ article {
     height: auto;
     padding: 30px 20px;
   }
-}
-
-/*
- * Visibility
- * Avoids setting display to `block` so it works also with `inline-block` and `table`
- */
-/* Desktop and bigger */
-@media (min-width: 960px) {
-  .uk-visible-small {
-    display: none !important;
-  }
-  .uk-visible-medium {
-    display: none !important;
-  }
-  .uk-hidden-large {
-    display: none !important;
-  }
-}
-/* Tablets portrait */
-@media (min-width: 768px) and (max-width: 959px) {
-  .uk-visible-small {
-    display: none !important;
-  }
-  .uk-visible-large {
-    display: none !important ;
-  }
-  .uk-hidden-medium {
-    display: none !important;
-  }
-}
-/* Phone landscape and smaller*/
-@media (max-width: 767px) {
-  .uk-visible-medium {
-    display: none !important;
-  }
-  .uk-visible-large {
-    display: none !important;
-  }
-  .uk-hidden-small {
-    display: none !important;
-  }
-}
-/* Remove from the flow and screen readers on any device */
-.uk-hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-/* It's hidden, but still affects layout */
-.uk-invisible {
-  visibility: hidden !important;
-}
-/* Show on hover */
-.uk-visible-hover:hover .uk-hidden,
-.uk-visible-hover:hover .uk-invisible {
-  display: block !important;
-  visibility: visible !important;
-}
-.uk-visible-hover-inline:hover .uk-hidden,
-.uk-visible-hover-inline:hover .uk-invisible {
-  display: inline-block !important;
-  visibility: visible !important;
-}
-/* Hide on touch */
-.uk-touch .uk-hidden-touch,
-.uk-notouch .uk-hidden-notouch {
-  display: none !important;
 }
 /* ==========================================================================
    End of file. Media queries should be the last thing here. Do not add stuff
